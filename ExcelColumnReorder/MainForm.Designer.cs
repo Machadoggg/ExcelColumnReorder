@@ -42,7 +42,7 @@
             btnImport.TabIndex = 0;
             btnImport.Text = "Importar Excel";
             btnImport.UseVisualStyleBackColor = true;
-            btnImport.Click += button1_Click;
+            btnImport.Click += btnImport_Click;
             // 
             // btnExport
             // 
@@ -52,6 +52,7 @@
             btnExport.TabIndex = 1;
             btnExport.Text = "Exportar Excel";
             btnExport.UseVisualStyleBackColor = true;
+            btnExport.Click += btnExport_Click;
             // 
             // dataGridView1
             // 
