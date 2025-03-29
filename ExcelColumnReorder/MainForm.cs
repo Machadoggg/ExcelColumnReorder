@@ -1,11 +1,6 @@
-using System;
-using System.Data;
-using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Windows.Forms;
 using OfficeOpenXml;
 using OfficeOpenXml.Style;
+using System.Data;
 using LicenseContext = OfficeOpenXml.LicenseContext;
 
 namespace ExcelColumnReorder
@@ -117,14 +112,6 @@ namespace ExcelColumnReorder
                     ExportExcel(saveFileDialog.FileName);
                 }
             }
-
-            //using (SaveFileDialog saveFileDialog = new SaveFileDialog { Filter = "Excel Files|*.xlsx" })
-            //{
-            //    if (saveFileDialog.ShowDialog() == DialogResult.OK)
-            //    {
-            //        ExportExcel(saveFileDialog.FileName);
-            //    }
-            //}
         }
 
         private void ExportExcel(string filePath)
@@ -138,7 +125,7 @@ namespace ExcelColumnReorder
                 var rango = worksheet.Cells["A1:H5"];
                 // Configurar el color de fondo en una sola operación
                 rango.Style.Fill.PatternType = ExcelFillStyle.Solid;
-                rango.Style.Fill.BackgroundColor.SetColor(Color.MediumBlue);
+                rango.Style.Fill.BackgroundColor.SetColor(Color.DodgerBlue);
 
 
                 // Apply document header formatting
@@ -154,7 +141,7 @@ namespace ExcelColumnReorder
                 worksheet.Cells["A2"].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
                 worksheet.Cells["A2"].Style.VerticalAlignment = ExcelVerticalAlignment.Center;
                 worksheet.Cells["A2"].Style.Font.Bold = true;
-                worksheet.Cells["A2"].Style.Font.Size = 20;
+                worksheet.Cells["A2"].Style.Font.Size = 30;
                 worksheet.Cells["A2"].Style.Font.Color.SetColor(Color.White);
 
 
@@ -162,6 +149,7 @@ namespace ExcelColumnReorder
                 worksheet.Cells["A3:H3"].Merge = true;
                 // Establecer el valor de la celda
                 worksheet.Cells["A3"].Value = "IMPORTADORA DE INSERTOS SAS";
+                worksheet.Cells["A3"].Style.Font.Size = 15;
                 // Centrar el texto horizontalmente y verticalmente
                 worksheet.Cells["A3"].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
                 worksheet.Cells["A3"].Style.VerticalAlignment = ExcelVerticalAlignment.Center;
@@ -173,6 +161,7 @@ namespace ExcelColumnReorder
                 worksheet.Cells["A4:H4"].Merge = true;
                 // Establecer el valor de la celda
                 worksheet.Cells["A4"].Value = "900433608-0";
+                worksheet.Cells["A4"].Style.Font.Size = 15;
                 // Centrar el texto horizontalmente y verticalmente
                 worksheet.Cells["A4"].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
                 worksheet.Cells["A4"].Style.VerticalAlignment = ExcelVerticalAlignment.Center;
