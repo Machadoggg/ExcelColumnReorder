@@ -119,16 +119,55 @@ namespace ExcelColumnReorder
             {
                 var worksheet = package.Workbook.Worksheets.Add("Hoja1");
 
+
+                // Definir el rango de celdas a colorear
+                var rango = worksheet.Cells["A1:H5"];
+                // Configurar el color de fondo en una sola operación
+                rango.Style.Fill.PatternType = ExcelFillStyle.Solid;
+                rango.Style.Fill.BackgroundColor.SetColor(Color.MediumBlue);
+
+
                 // Apply document header formatting
-                worksheet.Cells["A1"].Value = "Libro oficial de ventas";
-                worksheet.Cells["A1"].Style.Font.Bold = true;
-                worksheet.Cells["A1"].Style.Font.Size = 14;
 
-                worksheet.Cells["A2"].Value = "IMPORTADORA DE INSERTOS SAS";
+                // Unir celdas de A1 a H1
+                worksheet.Cells["A1:H1"].Merge = true;
+
+                // Unir celdas de A2 a H2
+                worksheet.Cells["A2:H2"].Merge = true;
+                // Establecer el valor de la celda
+                worksheet.Cells["A2"].Value = "Libro oficial de ventas";
+                // Centrar el texto horizontalmente y verticalmente
+                worksheet.Cells["A2"].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
+                worksheet.Cells["A2"].Style.VerticalAlignment = ExcelVerticalAlignment.Center;
                 worksheet.Cells["A2"].Style.Font.Bold = true;
+                worksheet.Cells["A2"].Style.Font.Size = 20;
+                worksheet.Cells["A2"].Style.Font.Color.SetColor(Color.White);
 
-                worksheet.Cells["A3"].Value = "900433608-0";
+
+                // Unir celdas de A3 a H3
+                worksheet.Cells["A3:H3"].Merge = true;
+                // Establecer el valor de la celda
+                worksheet.Cells["A3"].Value = "IMPORTADORA DE INSERTOS SAS";
+                // Centrar el texto horizontalmente y verticalmente
+                worksheet.Cells["A3"].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
+                worksheet.Cells["A3"].Style.VerticalAlignment = ExcelVerticalAlignment.Center;
                 worksheet.Cells["A3"].Style.Font.Bold = true;
+                worksheet.Cells["A3"].Style.Font.Color.SetColor(Color.White);
+
+
+                // Unir celdas de A4 a H4
+                worksheet.Cells["A4:H4"].Merge = true;
+                // Establecer el valor de la celda
+                worksheet.Cells["A4"].Value = "900433608-0";
+                // Centrar el texto horizontalmente y verticalmente
+                worksheet.Cells["A4"].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
+                worksheet.Cells["A4"].Style.VerticalAlignment = ExcelVerticalAlignment.Center;
+                worksheet.Cells["A4"].Style.Font.Bold = true;
+                worksheet.Cells["A4"].Style.Font.Color.SetColor(Color.White);
+
+                // Unir celdas de A5 a H5
+                worksheet.Cells["A5:H5"].Merge = true;
+
 
                 // Header row formatting
                 int dataStartRow = 7;
