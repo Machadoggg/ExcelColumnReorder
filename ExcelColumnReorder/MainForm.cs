@@ -118,7 +118,7 @@ namespace ExcelColumnReorder
         {
             using (var package = new ExcelPackage())
             {
-                var worksheet = package.Workbook.Worksheets.Add("Hoja1");
+                var worksheet = package.Workbook.Worksheets.Add($"Hoja1 {DateTime.Now:yyyy-MM-dd}");
 
 
                 // Definir el rango de celdas a colorear
