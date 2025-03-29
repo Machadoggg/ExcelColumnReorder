@@ -104,13 +104,27 @@ namespace ExcelColumnReorder
 
         private void btnExport_Click(object sender, EventArgs e)
         {
-            using (SaveFileDialog saveFileDialog = new SaveFileDialog { Filter = "Excel Files|*.xlsx" })
+            string defaultFileName = $"{DateTime.Now:yyyy-MM-dd} Libro Oficial de Ventas.xlsx";
+
+            using (SaveFileDialog saveFileDialog = new SaveFileDialog
+            {
+                Filter = "Excel Files|*.xlsx",
+                FileName = defaultFileName // Nombre predeterminado
+            })
             {
                 if (saveFileDialog.ShowDialog() == DialogResult.OK)
                 {
                     ExportExcel(saveFileDialog.FileName);
                 }
             }
+
+            //using (SaveFileDialog saveFileDialog = new SaveFileDialog { Filter = "Excel Files|*.xlsx" })
+            //{
+            //    if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            //    {
+            //        ExportExcel(saveFileDialog.FileName);
+            //    }
+            //}
         }
 
         private void ExportExcel(string filePath)
