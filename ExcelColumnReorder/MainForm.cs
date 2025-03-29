@@ -99,7 +99,7 @@ namespace ExcelColumnReorder
 
         private void btnExport_Click(object sender, EventArgs e)
         {
-            string defaultFileName = $"{DateTime.Now:yyyy-MM-dd} Libro Oficial de Ventas.xlsx";
+            string defaultFileName = $"{DateTime.Now:dd MM yyyy} Libro Oficial de Ventas.xlsx";
 
             using (SaveFileDialog saveFileDialog = new SaveFileDialog
             {
@@ -118,7 +118,7 @@ namespace ExcelColumnReorder
         {
             using (var package = new ExcelPackage())
             {
-                var worksheet = package.Workbook.Worksheets.Add($"Hoja1 {DateTime.Now:yyyy-MM-dd}");
+                var worksheet = package.Workbook.Worksheets.Add($"Hoja {DateTime.Now:dd MM yyyy}");
 
 
                 // Definir el rango de celdas a colorear
