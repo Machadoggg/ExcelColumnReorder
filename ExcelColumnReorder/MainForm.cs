@@ -9,8 +9,7 @@ namespace ExcelColumnReorder
     {
         private DataTable _dataTable;
         private string _filePath;
-
-        private readonly string[] _orderedColumns = {
+private readonly string[] _orderedColumns = {
             "Comprobante",
             "Fecha elaboración",
             "Base gravada",
@@ -19,6 +18,7 @@ namespace ExcelColumnReorder
             "Identificación",
             "Suc",
             "Nombre tercero"
+        
         };
 
         private readonly string[] _columnsToRemove = {
