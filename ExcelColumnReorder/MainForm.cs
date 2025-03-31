@@ -117,8 +117,19 @@ namespace ExcelColumnReorder
                 if (saveFileDialog.ShowDialog() == DialogResult.OK)
                 {
                     ExportExcel(saveFileDialog.FileName);
+                
+                    // Limpiar el DataGridView después de exportar
+                    ClearDataGridView();
                 }
             }
+        }
+
+        private void ClearDataGridView()
+        {
+            dataGridView1.DataSource = null;
+            dataGridView1.Rows.Clear();
+            dataGridView1.Columns.Clear();
+            _dataTable?.Clear();
         }
 
         private void ExportExcel(string filePath)
